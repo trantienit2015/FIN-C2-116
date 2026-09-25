@@ -1,0 +1,20 @@
+# Agent Manifest - AgentRegistry static entry point.
+# Root-level keys only; `class` is a single dotted import path.
+# Runtime-tunable parameters live in config/config.yaml, not here.
+
+id: FIN-C2-116
+name: Retail Investor AI Investment Advice Disclosure & FIEA Compliance Q&A Agent
+namespace: fin
+version: 0.1.0
+enabled: true
+description: Retail Investor AI Investment Advice Disclosure & FIEA Compliance Q&A
+  Agent
+class: src.graph.graph.FINAIAdviceDisclosureAgent
+category: Cat 2
+industry: FIN
+base_type: VectorRAGAgent
+generation_mode: deterministic
+required_trust_level: VERIFIED_EXTERNAL
+requires:
+  secrets: []
+  extras: []

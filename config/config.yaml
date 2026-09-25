@@ -1,0 +1,29 @@
+# Runtime parameters loaded by AgentRegistry and passed as Graph(config=...).
+# Static manifest fields (name/version/class/requires) live in agent.yaml.
+
+max_retry: 3
+timeout_s: 30
+
+# Clause corpus read by the graph as config["kb"] and forwarded to the inner workflow.
+# The entries below are ILLUSTRATIVE SAMPLE DATA so the agent runs end to end out of the
+# box; they are not an authoritative legal corpus. Replace them with your own sourced
+# clause entries (clause_id, keywords, provision_type, summary).
+kb:
+  - clause_id: SAMPLE-1
+    keywords: [advice, recommend, should buy, should sell, robo-advisor]
+    provision_type: regime_definition
+    summary: Illustrative sample entry - defines when AI output counts as investment advice
+  - clause_id: SAMPLE-2
+    keywords: [disclosure, disclose, registration, information, fund]
+    provision_type: disclosure
+    summary: Illustrative sample entry - disclosure duties for AI-generated investment information
+
+# Requirement table read as config["requirement_table"]; matched by regime label.
+# ILLUSTRATIVE SAMPLE DATA - replace with your own requirement set.
+requirement_table:
+  - regime: advice
+    requirement_id: REQ-ADV-01
+    description: Illustrative sample - registration and individualized-advice disclosures
+  - regime: information
+    requirement_id: REQ-INFO-01
+    description: Illustrative sample - general-information disclaimer
